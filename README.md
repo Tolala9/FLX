@@ -1,6 +1,6 @@
 # FLX
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  [![N|Solid](https://i.ibb.co/gRLsDsQ/EPAM-university-logo.png)](https://www.training.epam.ua/)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  [![N|Solid](https://i.ibb.co/gRLsDsQ/EPAM-university-logo.png)](https://www.training.epam.ua/)&nbsp; &nbsp; 
 Epam Front-End Camp. Online part. You also can try!
 
 ## Description
