@@ -1,4 +1,4 @@
-/* #1 */
+/* Task #1 */
 @media print {
 
 	.tm-sidebar, #about, .heading, .blocks, #ideas, .img-fluid, #contact {
@@ -74,8 +74,39 @@
 
 
 @media screen {
+/* Task #2 */
+	.box-bg:hover {
+		background-color: #87CEFA;
+		color: white;
+		cursor: pointer;
+	}
+	.box-bg:hover h2{
+		color: white;
+	}
 
-	
+/* Task #3 */	
+	p::first-letter {
+		color: #87CEFA;
+		font-size: 30px;
+	}
+/* Task #4 */	
+ .tm-main-nav {
+ 	box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.46);
+ }
+ .tm-content-box {
+	box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.46);	
+ }
+
+ .tm-banner {
+ 	background-color: #F5F5F5;
+ }
+ .tm-banner-inner {
+ 	background-color: #fff;
+ }
+
+
+
+
 
 }
 
