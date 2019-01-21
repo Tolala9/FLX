@@ -16,15 +16,10 @@
 		color: #85BCD9;
 	}
 
-	.tm-banner .tm-content-box{
-		padding: 0;
-		margin: 0;
+	.flex-2-col {
+		display: flex;
 	}
-	
 
-	.tm-content-box .flex-item  {
-		float: left;
-	}
 	.tm-content-box .tm-team-description-container {
 		max-width: 70%;
 	}
@@ -37,7 +32,7 @@
 	}
 	.tm-content-box 
 	.tm-team-description-container 
-	>.tm-section-description {
+	.tm-section-description>p {
 		font-style: italic;
 	}
 
@@ -75,35 +70,33 @@
 
 @media screen {
 
-/* Task #2 */
+	/* Task #2 */
 	.box-bg:hover {
 		background-color: #87CEFA;
-		color: white;
 		cursor: pointer;
 	}
 	.box-bg:hover h2{
 		color: white;
+		font-weight: bold;
 	}
 
-/* Task #3 */	
+	/* Task #3 */	
 	p::first-letter {
 		color: #87CEFA;
 		font-size: 30px;
 	}
 
-/* Task #4 */	
-section, .tm-main-nav, .tm-banner, #home {
-	box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.46);	
- }
+	/* Task #4 */	
+	section, .tm-main-nav, .tm-banner, #home {
+		box-shadow: 0px 0px 25px 2px rgba(0,0,0,0.46);	
+	}
 
- .tm-banner {
- 	background-color: #F5F5F5;
- }
- .tm-banner-inner {
- 	background-color: #fff;
- }
+	.tm-banner {
+		padding: 0;
+		border: 30px solid #F5F5F5
+	}
 
-/* Task #5 */
+	/* Task #5 */
 	section:before {
 		content: "";
 		display: inline-block;
@@ -114,95 +107,93 @@ section, .tm-main-nav, .tm-banner, #home {
 		border-color: #87CEFA transparent transparent transparent;
 	}
 
-/* Task #6 */
+	/* Task #6 */
 	.carousel-description {
-		color: #dcdcdc;
+		color: gainsboro;
 		letter-spacing: 5px;
 	}
 
-/* Task #7 */
+	/* Task #7 */
 	h2 + p {
 		font-style: italic;
 	}
 
-/* Task #8 */
+	/* Task #8 */
 	p.tm-section-description {
 		text-indent: 20px;
 		line-height: 35px;
 	}
 
-/* Task #9 */
-.heading li a {
-	color: black;
-}
-.heading li a:visited {
-	text-decoration: underline;
-}
-.heading li a:hover {
-	text-decoration: line;
-	text-decoration-style: double;
-	color: #87CEFA;
-}
-.heading li:first-child a:after {
-	content: "New";
-	color: red;
-	font-size: 10px;
-	position: absolute;
-}
-.heading li:nth-child(3) a:after {
-	content: "New";
-	color: red;
-	font-size: 10px;
-	position: absolute;
-}
+	/* Task #9 */
+	.heading li a {
+		color: black;
+	}
+	.heading li a:visited {
+		text-decoration: underline;
+	}
+	.heading li a:hover {
+		text-decoration: line;
+		text-decoration-style: double;
+		color: #87CEFA;
+	}
+	.heading li:first-child a:after,
+	.heading li:nth-child(3) a:after {
+		content: "New";
+		color: red;
+		font-size: 10px;
+		position: absolute;
+	}
+	
+	/* Task #10 */
+	.gallery-container {
+		display: flex;
+		flex-wrap: wrap
+	}
+	.box-work {
+		flex: 1 0 31%;
+		padding: 10px;
+	}
+	.box-work p::first-letter {
+		color: black;
+	}
+	.box-work:nth-child(even) {
+    background-color: #F2F2F2;
+  }
 
+	/* Task #11 */
+	.mandatory-field:after {
+		content: "*";
+		color: red;
+		font-weight: bold;
+	}
 
+	.btn {
+		border-radius: 0;
+	}
+	.btn-primary {
+		color: #87CEFA;
+		background-color: #fff;
+		border-color: #87CEFA;
+	}
+	.btn-primary:hover {
+		color: white;
+		background-color:  #87CEFA;
+		border-color: #87CEFA;
+	}
 
-/* Task #10 */
-.gallery-container {
-	display: flex;
-	flex-wrap: wrap
-}
-.box-work {
-	flex: 1 0 31%;
-	margin: 10px;
-}
-.box-work p::first-letter {
-	color: black;
-}
+	.contact-form {
+		text-align: right;
+	}
 
-/* Task #11 */
-.mandatory-field:after {
-	content: "*";
-	color: red;
-	font-weight: bold;
-}
+	/* Task #12 */
+	.tm-nav-item-link:hover {
+		background-color: #F5F5F5;
+	}
 
-.btn {
-	border-radius: 0;
-}
-.btn-primary {
-	color: #87CEFA;
-	background-color: #fff;
-	border-color: #87CEFA;
-}
-.btn-primary:hover {
-	color: white;
-	background-color:  #87CEFA;
-	border-color: #87CEFA;
-}
-
-.contact-form {
-	text-align: right;
-}
-
-/* Task #12 */
- 
-
-/* Addition styles*/
-.flex-2-col {
-	display: flex;
-}
+	/* Addition styles*/
+	.flex-2-col {
+		display: flex;
+	}
 
 
 
