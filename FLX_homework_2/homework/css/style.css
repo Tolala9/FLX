@@ -171,10 +171,30 @@ section, .tm-main-nav, .tm-banner, #home {
 	color: black;
 }
 
-
-
 /* Task #11 */
+.mandatory-field:after {
+	content: "*";
+	color: red;
+	font-weight: bold;
+}
 
+.btn {
+	border-radius: 0;
+}
+.btn-primary {
+	color: #87CEFA;
+	background-color: #fff;
+	border-color: #87CEFA;
+}
+.btn-primary:hover {
+	color: white;
+	background-color:  #87CEFA;
+	border-color: #87CEFA;
+}
+
+.contact-form {
+	text-align: right;
+}
 
 /* Task #12 */
  
