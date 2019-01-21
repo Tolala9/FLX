@@ -159,6 +159,18 @@ section, .tm-main-nav, .tm-banner, #home {
 
 
 /* Task #10 */
+.gallery-container {
+	display: flex;
+	flex-wrap: wrap
+}
+.box-work {
+	flex: 1 0 31%;
+	margin: 10px;
+}
+.box-work p::first-letter {
+	color: black;
+}
+
 
 
 /* Task #11 */
