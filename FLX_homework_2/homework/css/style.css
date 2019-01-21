@@ -132,7 +132,6 @@
 		text-decoration: underline;
 	}
 	.heading li a:hover {
-		text-decoration: line;
 		text-decoration-style: double;
 		color: #87CEFA;
 	}
@@ -178,7 +177,7 @@
 	.btn-primary:hover {
 		color: white;
 		background-color:  #87CEFA;
-		border-color: #87CEFA;
+		border-color: transparent;
 	}
 
 	.contact-form {
