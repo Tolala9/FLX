@@ -1,0 +1,85 @@
+// reset syles 
+body {
+	margin: 0;
+	font: normal 300 15px/24px Roboto, Ubuntu, Cantarell, Helvetica ,sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
+	background-color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	background-image: url(../img/header_background_v1.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	section {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		text-align: center;
+		h1 {
+			color: #ffff;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.top-wrapper {
+	.logo {
+		display: inline-block;
+		img {
+			width: 230px;
+			height: 130px;
+		}
+	}
+	nav {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		a {
+			display: inline-block;
+			padding: 20px 100px;
+			cursor: pointer;
+			border-right: 1px solid #607D8B;
+			color: #ffff;
+			text-transform: uppercase;
+			font-weight: bold;
+			&:last-child {
+				border-right: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+h1 {
+
+}
+.btn {
+	display: inline-block;
+	padding: 15px 60px;
+	background-color: #01ACAC;
+	color: #ffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	&.btn-top {
+
+	}
+}
