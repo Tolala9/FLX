@@ -1,25 +1,35 @@
-// reset syles 
+// START Reset Syles 
 body {
 	margin: 0;
-	font: normal 300 15px/24px Roboto, Ubuntu, Cantarell, Helvetica ,sans-serif;
+	font: $primaryFont;
+	background-color: black;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
-	color: #212529;
+	color: red;
 	text-align: left;
 	background-color: #fff;
 }
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+	margin-top: 0;
+	margin-bottom: 0;
 }
-
 a {
 	text-decoration: none;
 }
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+/* 	END Reset Syles */ 
 
-header {
-	background-image: url(../img/header_background_v1.jpg);
+.main-wrapper {
+	background-color: $bodyBg;
+}
+
+/* 	START Heder section */
+header { 
+	background-image: $headerBgImg_1;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -31,8 +41,10 @@ header {
 		width: 100%;
 		text-align: center;
 		h1 {
-			color: #ffff;
+			color: $headerTitleColor;
 			text-transform: uppercase;
+			text-align: center;
+			margin-bottom: 15px;
 		}
 	}
 }
@@ -54,8 +66,8 @@ header {
 			display: inline-block;
 			padding: 20px 100px;
 			cursor: pointer;
-			border-right: 1px solid #607D8B;
-			color: #ffff;
+			border-right: 1px solid $borderColor;
+			color: $navTextColor;
 			text-transform: uppercase;
 			font-weight: bold;
 			&:last-child {
@@ -64,22 +76,95 @@ header {
 		}
 	}
 }
+/* 	END Heder section */
 
-
-
-
-
-h1 {
-
-}
+/* 	Start Page Elements */
 .btn {
 	display: inline-block;
-	padding: 15px 60px;
-	background-color: #01ACAC;
-	color: #ffff;
+	padding: 15px 80px;
+	background-color: $btnBgColor;
+	color: $btnTextColor;
 	text-decoration: none;
 	text-transform: uppercase;
+	border: none;
 	&.btn-top {
-
+		padding: 15px 60px;
 	}
+}
+// 	END Page Elements 
+
+main {
+	margin: 0px 200px ;
+}
+	.toolbar {
+		margin: 10px 5px;
+		text-align: right;
+		input {
+			padding: 10px;
+			border-color: $borderColor;
+			border-width: 1px;
+			background-color: transparent;
+			&::placeholder {
+				color: $searchColor;
+				padding-left: 10px;
+			}
+		}
+	}
+section {
+	h1 {
+		color: $sectionTitleColor;
+		text-align: right;
+		text-transform: uppercase;
+	}
+	h4, p {
+		color: $sectionTitleColor;
+	}
+}
+
+article {
+	display: flex;
+	background-color: $articleBg;
+	padding: 10px 20px 10px 10px;
+	margin-bottom: 20px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	img {
+		width: 280px;
+		height: 280px;
+	}
+	button {
+		float: right;
+	}
+
+}
+
+.post {
+	margin-left: 10px;
+	&-description {
+		font-size: 12px;
+		border-bottom: 1px solid $borderColor;
+		color: $postDescColor;
+		padding: 10px 5px;
+	}
+	h3 {
+		color: $postTitleColor;
+		margin-top: 5px;
+		text-transform: uppercase;
+	}
+}
+.about, .contact-form {
+	margin-top: 50px;
+}
+.about {
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+footer {
+	 font-size: 12px; 
+	 color: $footerTextColor; 
+	 margin: 10px;     
 }

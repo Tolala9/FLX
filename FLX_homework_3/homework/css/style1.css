@@ -1,20 +1,30 @@
 body {
   margin: 0;
-  font: normal 300 15px/24px Roboto, Ubuntu, Cantarell, Helvetica ,sans-serif;
+  font: normal 300 15px/24px Roboto, Ubuntu, Cantarell, Helvetica, sans-serif;
+  background-color: black;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: red;
   text-align: left;
   background-color: #fff; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0; }
 
 a {
   text-decoration: none; }
 
+p {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+
+/* 	END Reset Syles */
+.main-wrapper {
+  background-color: #FFFFFF; }
+
+/* 	START Heder section */
 header {
   background-image: url(../img/header_background_v1.jpg);
   background-position: center;
@@ -29,7 +39,9 @@ header {
     text-align: center; }
     header section h1 {
       color: #ffff;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 15px; }
 
 .top-wrapper .logo {
   display: inline-block; }
@@ -52,10 +64,74 @@ header {
     .top-wrapper nav a:last-child {
       border-right: none; }
 
+/* 	END Heder section */
+/* 	Start Page Elements */
 .btn {
   display: inline-block;
-  padding: 15px 60px;
+  padding: 15px 80px;
   background-color: #01ACAC;
   color: #ffff;
   text-decoration: none;
+  text-transform: uppercase;
+  border: none; }
+  .btn.btn-top {
+    padding: 15px 60px; }
+
+main {
+  margin: 0px 200px; }
+
+.toolbar {
+  margin: 10px 5px;
+  text-align: right; }
+  .toolbar input {
+    padding: 10px;
+    border-color: #607D8B;
+    border-width: 1px;
+    background-color: transparent; }
+    .toolbar input::placeholder {
+      color: #010F16;
+      padding-left: 10px; }
+
+section h1 {
+  color: #010F16;
+  text-align: right;
   text-transform: uppercase; }
+section h4, section p {
+  color: #010F16; }
+
+article {
+  display: flex;
+  background-color: #EFEFEF;
+  padding: 10px 20px 10px 10px;
+  margin-bottom: 20px; }
+  article:last-child {
+    margin-bottom: 0; }
+  article img {
+    width: 280px;
+    height: 280px; }
+  article button {
+    float: right; }
+
+.post {
+  margin-left: 10px; }
+  .post-description {
+    font-size: 12px;
+    border-bottom: 1px solid #607D8B;
+    color: #E90303;
+    padding: 10px 5px; }
+  .post h3 {
+    color: #01ACAC;
+    margin-top: 5px;
+    text-transform: uppercase; }
+
+.about, .contact-form {
+  margin-top: 50px; }
+
+.about img {
+  width: 100%;
+  height: auto; }
+
+footer {
+  font-size: 12px;
+  color: #010F16;
+  margin: 10px; }
