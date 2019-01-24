@@ -1,13 +1,10 @@
+/* 	START Reset Syles */
 body {
   margin: 0;
   font: normal 300 15px/24px Roboto, Ubuntu, Cantarell, Helvetica, sans-serif;
-  background-color: black;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
-  color: red;
-  text-align: left;
-  background-color: #fff; }
+  line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
@@ -38,8 +35,9 @@ header {
     width: 100%;
     text-align: center; }
     header section h1 {
-      color: #ffff;
       text-transform: uppercase;
+      color: #ffff;
+      text-decoration: none;
       text-align: center;
       margin-bottom: 15px; }
 
@@ -58,8 +56,9 @@ header {
     padding: 20px 100px;
     cursor: pointer;
     border-right: 1px solid #607D8B;
-    color: #ffff;
     text-transform: uppercase;
+    color: #ffff;
+    text-decoration: none;
     font-weight: bold; }
     .top-wrapper nav a:last-child {
       border-right: none; }
@@ -70,13 +69,15 @@ header {
   display: inline-block;
   padding: 15px 80px;
   background-color: #01ACAC;
+  text-transform: uppercase;
   color: #ffff;
   text-decoration: none;
-  text-transform: uppercase;
-  border: none; }
-  .btn.btn-top {
+  border: none;
+  cursor: pointer; }
+  .btn-top {
     padding: 15px 60px; }
 
+/* END Page Elements  */
 main {
   margin: 0px 200px; }
 
@@ -85,17 +86,17 @@ main {
   text-align: right; }
   .toolbar input {
     padding: 10px;
-    border-color: #607D8B;
-    border-width: 1px;
+    border: 1px solid #607D8B;
     background-color: transparent; }
     .toolbar input::placeholder {
       color: #010F16;
       padding-left: 10px; }
 
 section h1 {
+  text-transform: uppercase;
   color: #010F16;
-  text-align: right;
-  text-transform: uppercase; }
+  text-decoration: none;
+  text-align: right; }
 section h4, section p {
   color: #010F16; }
 
@@ -120,9 +121,10 @@ article {
     color: #E90303;
     padding: 10px 5px; }
   .post h3 {
+    text-transform: uppercase;
     color: #01ACAC;
-    margin-top: 5px;
-    text-transform: uppercase; }
+    text-decoration: none;
+    margin-top: 5px; }
 
 .about, .contact-form {
   margin-top: 50px; }

@@ -1,14 +1,10 @@
-// START Reset Syles 
+/* 	START Reset Syles */ 
 body {
 	margin: 0;
 	font: $primaryFont;
-	background-color: black;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
-	color: red;
-	text-align: left;
-	background-color: #fff;
 }
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
@@ -23,13 +19,21 @@ p {
 }
 /* 	END Reset Syles */ 
 
+// Mixins
+@mixin upperText($color) {
+	text-transform: uppercase;
+	color: $color;
+	text-decoration: none;
+}
+
+
 .main-wrapper {
 	background-color: $bodyBg;
 }
 
 /* 	START Heder section */
 header { 
-	background-image: $headerBgImg_1;
+	background-image: $headerBgImg;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -41,8 +45,7 @@ header {
 		width: 100%;
 		text-align: center;
 		h1 {
-			color: $headerTitleColor;
-			text-transform: uppercase;
+			@include upperText($headerTextColor);
 			text-align: center;
 			margin-bottom: 15px;
 		}
@@ -66,9 +69,8 @@ header {
 			display: inline-block;
 			padding: 20px 100px;
 			cursor: pointer;
-			border-right: 1px solid $borderColor;
-			color: $navTextColor;
-			text-transform: uppercase;
+			border-right: $borderStyle;
+			@include upperText($headerTextColor);
 			font-weight: bold;
 			&:last-child {
 				border-right: none;
@@ -83,15 +85,14 @@ header {
 	display: inline-block;
 	padding: 15px 80px;
 	background-color: $btnBgColor;
-	color: $btnTextColor;
-	text-decoration: none;
-	text-transform: uppercase;
+	@include upperText($btnTextColor);
 	border: none;
-	&.btn-top {
+	cursor: pointer;
+	&-top {
 		padding: 15px 60px;
 	}
 }
-// 	END Page Elements 
+/* END Page Elements  */
 
 main {
 	margin: 0px 200px ;
@@ -101,8 +102,7 @@ main {
 		text-align: right;
 		input {
 			padding: 10px;
-			border-color: $borderColor;
-			border-width: 1px;
+			border: $borderStyle;
 			background-color: transparent;
 			&::placeholder {
 				color: $searchColor;
@@ -112,9 +112,8 @@ main {
 	}
 section {
 	h1 {
-		color: $sectionTitleColor;
+		@include upperText($sectionTitleColor);
 		text-align: right;
-		text-transform: uppercase;
 	}
 	h4, p {
 		color: $sectionTitleColor;
@@ -143,14 +142,13 @@ article {
 	margin-left: 10px;
 	&-description {
 		font-size: 12px;
-		border-bottom: 1px solid $borderColor;
+		border-bottom: $borderStyle;
 		color: $postDescColor;
 		padding: 10px 5px;
 	}
 	h3 {
-		color: $postTitleColor;
+		@include upperText($postTitleColor);
 		margin-top: 5px;
-		text-transform: uppercase;
 	}
 }
 .about, .contact-form {

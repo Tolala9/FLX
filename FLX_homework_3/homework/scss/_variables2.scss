@@ -1,10 +1,22 @@
-$headerBgImg_1: url(../img/header_background_v2.jpg);
+$headerBgImg: url(../img/header_background_v2.jpg);
 $primaryFont: normal 18px/26px "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$borderStyle: 1px solid #CFD8DC;
 
-$navBorderColor: #ffff;
-$navTextColor: #FF5722;
-
-$headerTitleColor: #FF5722;
+$blackText: #757575;
+$bodyBg: #EFEFEF;
+$headerTextColor: #FF5722;
 
 $btnBgColor: #0401AC;
 $btnTextColor: #ffff;
+
+$searchColor: $blackText;
+
+$sectionTitleColor: $blackText;
+$sectionTextColor: $blackText;
+
+$articleBg: #FFFFFF;
+
+$postDescColor: #C3C3D4;
+$postTitleColor: #607D8B;
+
+$footerTextColor: $blackText;

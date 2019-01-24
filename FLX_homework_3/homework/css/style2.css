@@ -1,67 +1,139 @@
-/*
-Error: Undefined variable: "$bodyBg".
-        on line 27 of D:/Web_practice/FLX_Epam Online Course/FLX/FLX_homework_3/homework/scss/_main.scss
-        from line 3 of D:\Web_practice\FLX_Epam Online Course\FLX\FLX_homework_3\homework\scss\style2.scss
+/* 	START Reset Syles */
+body {
+  margin: 0;
+  font: normal 18px/26px "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5; }
 
-Backtrace:
-D:/Web_practice/FLX_Epam Online Course/FLX/FLX_homework_3/homework/scss/_main.scss:27
-D:\Web_practice\FLX_Epam Online Course\FLX\FLX_homework_3\homework\scss\style2.scss:3
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:88:in `block in with_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:88:in `with_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:20:in `render'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:290:in `render'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:400:in `run'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
-C:/Program Files (x86)/Koala/bin/sass:22:in `load'
-C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$bodyBg\".\A         on line 27 of D:/Web_practice/FLX_Epam Online Course/FLX/FLX_homework_3/homework/scss/_main.scss\A         from line 3 of D:\Web_practice\FLX_Epam Online Course\FLX\FLX_homework_3\homework\scss\style2.scss"; }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+a {
+  text-decoration: none; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+
+/* 	END Reset Syles */
+.main-wrapper {
+  background-color: #EFEFEF; }
+
+/* 	START Heder section */
+header {
+  background-image: url(../img/header_background_v2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; }
+  header section {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center; }
+    header section h1 {
+      text-transform: uppercase;
+      color: #FF5722;
+      text-decoration: none;
+      text-align: center;
+      margin-bottom: 15px; }
+
+.top-wrapper .logo {
+  display: inline-block; }
+  .top-wrapper .logo img {
+    width: 230px;
+    height: 130px; }
+.top-wrapper nav {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .top-wrapper nav a {
+    display: inline-block;
+    padding: 20px 100px;
+    cursor: pointer;
+    border-right: 1px solid #CFD8DC;
+    text-transform: uppercase;
+    color: #FF5722;
+    text-decoration: none;
+    font-weight: bold; }
+    .top-wrapper nav a:last-child {
+      border-right: none; }
+
+/* 	END Heder section */
+/* 	Start Page Elements */
+.btn {
+  display: inline-block;
+  padding: 15px 80px;
+  background-color: #0401AC;
+  text-transform: uppercase;
+  color: #ffff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer; }
+  .btn-top {
+    padding: 15px 60px; }
+
+/* END Page Elements  */
+main {
+  margin: 0px 200px; }
+
+.toolbar {
+  margin: 10px 5px;
+  text-align: right; }
+  .toolbar input {
+    padding: 10px;
+    border: 1px solid #CFD8DC;
+    background-color: transparent; }
+    .toolbar input::placeholder {
+      color: #757575;
+      padding-left: 10px; }
+
+section h1 {
+  text-transform: uppercase;
+  color: #757575;
+  text-decoration: none;
+  text-align: right; }
+section h4, section p {
+  color: #757575; }
+
+article {
+  display: flex;
+  background-color: #FFFFFF;
+  padding: 10px 20px 10px 10px;
+  margin-bottom: 20px; }
+  article:last-child {
+    margin-bottom: 0; }
+  article img {
+    width: 280px;
+    height: 280px; }
+  article button {
+    float: right; }
+
+.post {
+  margin-left: 10px; }
+  .post-description {
+    font-size: 12px;
+    border-bottom: 1px solid #CFD8DC;
+    color: #C3C3D4;
+    padding: 10px 5px; }
+  .post h3 {
+    text-transform: uppercase;
+    color: #607D8B;
+    text-decoration: none;
+    margin-top: 5px; }
+
+.about, .contact-form {
+  margin-top: 50px; }
+
+.about img {
+  width: 100%;
+  height: auto; }
+
+footer {
+  font-size: 12px;
+  color: #757575;
+  margin: 10px; }
