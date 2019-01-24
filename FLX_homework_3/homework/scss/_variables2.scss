@@ -3,6 +3,7 @@ $primaryFont: normal 18px/26px "Palatino Linotype", "Book Antiqua", Palatino, se
 $borderStyle: 1px solid #CFD8DC;
 
 $blackText: #757575;
+$secondColorText:#607D8B;
 $bodyBg: #EFEFEF;
 $headerTextColor: #FF5722;
 
@@ -17,6 +18,8 @@ $sectionTextColor: $blackText;
 $articleBg: #FFFFFF;
 
 $postDescColor: #C3C3D4;
-$postTitleColor: #607D8B;
+$postTitleColor: $secondColorText;
+
+$formLabelsColor: $secondColorText;
 
 $footerTextColor: $blackText;

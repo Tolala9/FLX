@@ -133,6 +133,41 @@ article {
   width: 100%;
   height: auto; }
 
+/* 	START Contact form */
+.contact-form h4 {
+  text-align: right;
+  text-transform: uppercase;
+  color: #010F16;
+  text-decoration: none; }
+.contact-form form {
+  display: flex;
+  flex-direction: column; }
+  .contact-form form input {
+    display: flex;
+    line-height: 40px; }
+  .contact-form form label {
+    display: flex;
+    align-self: flex-end;
+    color: #01ACAC; }
+  .contact-form form label, .contact-form form button {
+    margin-top: 20px; }
+  .contact-form form input, .contact-form form textarea {
+    border: 1px solid #607D8B;
+    background-color: transparent; }
+  .contact-form form button {
+    display: inline-flex;
+    width: auto;
+    align-self: flex-end; }
+.contact-form .input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .contact-form .input-wrapper__item {
+    display: flex;
+    flex-direction: column;
+    width: 49%; }
+
+/* 	END Contact form */
 footer {
   font-size: 12px;
   color: #010F16;

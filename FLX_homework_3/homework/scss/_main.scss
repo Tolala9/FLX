@@ -14,8 +14,8 @@ a {
 	text-decoration: none;
 }
 p {
-  margin-top: 0;
-  margin-bottom: 1rem;
+	margin-top: 0;
+	margin-bottom: 1rem;
 }
 /* 	END Reset Syles */ 
 
@@ -97,19 +97,19 @@ header {
 main {
 	margin: 0px 200px ;
 }
-	.toolbar {
-		margin: 10px 5px;
-		text-align: right;
-		input {
-			padding: 10px;
-			border: $borderStyle;
-			background-color: transparent;
-			&::placeholder {
-				color: $searchColor;
-				padding-left: 10px;
-			}
+.toolbar {
+	margin: 10px 5px;
+	text-align: right;
+	input {
+		padding: 10px;
+		border: $borderStyle;
+		background-color: transparent;
+		&::placeholder {
+			color: $searchColor;
+			padding-left: 10px;
 		}
 	}
+}
 section {
 	h1 {
 		@include upperText($sectionTitleColor);
@@ -161,8 +161,51 @@ article {
 	}
 }
 
+/* 	START Contact form */
+.contact-form {
+	h4 {
+		text-align: right;
+		@include upperText($sectionTitleColor);
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		input {
+			display: flex;
+			line-height: 40px;
+		}
+		label {
+			display: flex;
+			align-self: flex-end;
+			color: $formLabelsColor
+		}
+		label, button {
+			margin-top: 20px;
+		} 
+		input, textarea {
+			border: $borderStyle;
+			background-color: transparent;
+		}
+		button {
+			display: inline-flex;
+			width: auto;
+			align-self: flex-end;
+		}
+	}
+	.input-wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		&__item {
+			display: flex;
+			flex-direction: column;
+			width: 49%;
+		}
+	}
+}
+/* 	END Contact form */
 footer {
-	 font-size: 12px; 
-	 color: $footerTextColor; 
-	 margin: 10px;     
+	font-size: 12px; 
+	color: $footerTextColor; 
+	margin: 10px;     
 }

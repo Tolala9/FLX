@@ -3,6 +3,7 @@ $primaryFont: normal 300 15px/24px Roboto, Ubuntu, Cantarell, Helvetica ,sans-se
 $borderStyle: 1px solid #607D8B;
 
 $blackText: #010F16;
+$secondColorText:#01ACAC;
 $bodyBg: #FFFFFF;
 $headerTextColor: #ffff;
 
@@ -17,6 +18,8 @@ $sectionTextColor: $blackText;
 $articleBg: #EFEFEF;
 
 $postDescColor: #E90303;
-$postTitleColor: #01ACAC;
+$postTitleColor: $secondColorText;
+
+$formLabelsColor: $secondColorText;
 
 $footerTextColor: $blackText;
