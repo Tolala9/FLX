@@ -18,7 +18,7 @@ a {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 /*  END Reset Syles */
@@ -259,6 +259,53 @@ h2 {
   padding-right: 30px;
 }
 
-.footer-blocks {
+footer {
+  background-color: #FFFFFF;
+  padding: 0 50px;
+}
+
+footer .footer-blocks {
   display: flex;
+  padding: 120px 0px 100px;
+}
+
+footer .footer-blocks__item {
+  flex: 1;
+  margin-right: 10px;
+}
+
+footer .footer-blocks__item h3 {
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+
+footer .footer-blocks__item button {
+  line-height: 37px;
+}
+
+footer .footer-blocks__item p {
+  margin-bottom: 0;
+  color: #9E9E9E;
+}
+
+footer .footer-blocks__item .time {
+  color: #E8E8E8;
+}
+
+footer .footer-bottom {
+  display: flex;
+  padding: 20px 0px;
+  border-top: 2px solid #F0F0F0;
+  align-items: center;
+}
+
+footer .footer-bottom .footer-bottom__copyright {
+  color: #9E9E9E;
+  margin-right: auto;
+}
+
+footer .footer-bottom nav a {
+  color: #000000;
+  margin-left: 20px;
+  text-transform: capitalize;
 }
