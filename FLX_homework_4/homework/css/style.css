@@ -22,16 +22,17 @@ p {
 }
 
 /*  END Reset Syles */
+/*  START Buttons */
 .btn {
   text-align: center;
   border: none;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .btn-nav {
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
-  font-size: 14px;
   padding: 10px 50px;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -42,7 +43,6 @@ p {
   background-color: #097774;
   text-transform: capitalize;
   font-weight: bold;
-  font-size: 14px;
   padding: 10px;
 }
 
@@ -50,7 +50,6 @@ p {
   color: #FFFFFF;
   background-color: #097774;
   font-weight: bold;
-  font-size: 14px;
 }
 
 .btn-email {
@@ -59,7 +58,13 @@ p {
   border: 1px solid #000000;
   margin-right: 10px;
   padding-right: 30px;
-  font-size: 14px;
+}
+
+/*  END Buttons */
+h2 {
+  font-size: 25px;
+  font-weight: normal;
+  text-align: center;
 }
 
 body {
@@ -170,12 +175,6 @@ header nav a {
   color: #000000;
   font-size: 20px;
   max-width: 25%;
-}
-
-h2 {
-  font-size: 25px;
-  font-weight: normal;
-  text-align: center;
 }
 
 .section-about .article {
