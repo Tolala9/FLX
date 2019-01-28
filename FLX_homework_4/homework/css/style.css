@@ -186,7 +186,6 @@ header nav a {
 
 .section-about .article figure img {
   width: 100%;
-  min-height: 300px;
   display: block;
   position: relative;
 }
