@@ -52,14 +52,6 @@ p {
   font-weight: bold;
 }
 
-.btn-email {
-  color: #000000;
-  background-color: #F3F3F3;
-  border: 1px solid #000000;
-  margin-right: 10px;
-  padding-right: 30px;
-}
-
 /*  END Buttons */
 h2 {
   font-size: 25px;
@@ -249,13 +241,31 @@ header nav a {
   padding: 50px 25px;
 }
 
-.section-subscribe .title-wrap {
+.section-subscribe .form-wrap {
   display: flex;
   justify-content: flex-end;
 }
 
-.section-subscribe .title-wrap h2 {
+.section-subscribe .form-wrap h2 {
   padding-right: 30px;
+}
+
+form {
+  display: flex;
+}
+
+form input[type=email] {
+  color: #000000;
+  background-color: #F3F3F3;
+  border: 1px solid #000000;
+  margin-right: 10px;
+  color: #000000;
+  font-size: 14px;
+}
+
+form input[type=email]::placeholder {
+  color: #000000;
+  padding: 10px;
 }
 
 footer {
