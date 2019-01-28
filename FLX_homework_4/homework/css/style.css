@@ -178,14 +178,14 @@ h2 {
   text-align: center;
 }
 
-.section-about article {
+.section-about .article {
   display: flex;
   flex-direction: row;
   margin: 30px 50px 70px;
   overflow: hidden;
 }
 
-.section-about article figure {
+.section-about .article figure {
   flex: 1;
   margin: 0;
   max-height: 300px;
@@ -193,14 +193,14 @@ h2 {
   overflow: hidden;
 }
 
-.section-about article figure img {
+.section-about .article figure img {
   width: 100%;
   min-height: 300px;
   display: block;
   position: relative;
 }
 
-.section-about article figure figcaption {
+.section-about .article figure figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -209,7 +209,7 @@ h2 {
   font-size: 14px;
 }
 
-.section-about article figure .like-box {
+.section-about .article figure .like-box {
   position: absolute;
   top: 0;
   right: 0;
@@ -220,11 +220,11 @@ h2 {
   border: 2px solid #FFFFFF;
 }
 
-.section-about article figure .like-box span {
+.section-about .article figure .like-box span {
   font-size: 10px;
 }
 
-.section-about article .article-text {
+.section-about .article .article-text {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -246,16 +246,16 @@ h2 {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
-.section-about {
+.section-subscribe {
   padding: 50px 25px;
 }
 
-.section-about .title-wrap {
+.section-subscribe .title-wrap {
   display: flex;
   justify-content: flex-end;
 }
 
-.section-about .title-wrap h2 {
+.section-subscribe .title-wrap h2 {
   padding-right: 30px;
 }
 
