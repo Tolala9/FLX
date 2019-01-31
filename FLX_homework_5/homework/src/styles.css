@@ -1,5 +1,5 @@
- /* &#x2261*/
- body {
+
+body {
   font-family: roboto;
   font-weight: 100;
   background-color: #0B192F;
@@ -64,6 +64,9 @@ p {
 }
 .top-wrapper .logo p span{
   color: #B71757
+}
+.menu-togle {
+  display: none;
 }
 .top-wrapper nav {
   display: flex;
@@ -174,14 +177,73 @@ aside {
 footer {
   display: flex;
   padding: 0 20px;
-  /*align-items: center;*/
   height: 80px;
   background-color: #162b4d;
   align-items: center;
+}
+.footer__content {
+  display: flex;
+  flex: 1;
 }
 footer p {
   opacity: 0.5;
 }
 footer .copyright {
   margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .top-wrapper nav {
+    display: none;
+  }
+  .top-wrapper {
+    flex-direction: column-reverse;
+    height: 150px;
+  }
+  .top-wrapper .logo {
+    margin: auto;
+  }
+  .menu-togle {
+    display: flex;
+    margin: auto
+  }
+
+  .post-wrap .post .post-wrap-link{
+    flex-direction: column;
+  }
+  .post-wrap .post .post-text__wrap {
+    flex-direction: column;
+  }
+  .post-wrap .post:nth-child(even) .post-wrap-link{
+    flex-direction: column;
+  }
+  .post-wrap .post:nth-child(even) .post-text__wrap {
+    flex-direction: column;
+    text-align: left;
+  }
+
+
+  aside {
+    flex: 0 0 40%;
+  }
+  footer {
+    flex-direction: column;
+    height: 130px;
+    text-align: center;
+    justify-content: center;
+  }
+  .footer__content {
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer .copyright {
+    flex-direction: column;
+    margin: 0;
+  }
+
+
+}
+
+@media only screen and (max-width: 480px) {
+  
 }
