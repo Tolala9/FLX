@@ -114,7 +114,7 @@ main {
   text-align: right;
 }
 .post-wrap .post picture{
-  flex: 1;
+  flex: 1; 
 }
 .post-wrap .post .post-text__wrap {
   flex: 1;
@@ -207,12 +207,15 @@ footer .copyright {
     display: flex;
     margin: auto
   }
-
   .post-wrap .post .post-wrap-link{
     flex-direction: column;
   }
+  .post-wrap .post picture{
+
+  }
   .post-wrap .post .post-text__wrap {
     flex-direction: column;
+    flex: 1 1 auto;
   }
   .post-wrap .post:nth-child(even) .post-wrap-link{
     flex-direction: column;
@@ -221,8 +224,6 @@ footer .copyright {
     flex-direction: column;
     text-align: left;
   }
-
-
   aside {
     flex: 0 0 40%;
   }
@@ -240,7 +241,6 @@ footer .copyright {
     flex-direction: column;
     margin: 0;
   }
-
 
 }
 
