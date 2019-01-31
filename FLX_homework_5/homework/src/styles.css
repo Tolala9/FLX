@@ -245,5 +245,12 @@ footer .copyright {
 }
 
 @media only screen and (max-width: 480px) {
-  
+  main {
+    flex: 1;
+    flex-direction: column;
+  }
+  aside {
+    flex: 1;
+    margin: 0;
+  }
 }
