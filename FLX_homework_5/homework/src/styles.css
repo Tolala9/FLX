@@ -1,16 +1,5 @@
-/*
- * Feel free to change name of colors if you need it
- * Feel free to add new colors if you need it
- */
-/*:root {
-  --bg-color--dark: #0b192f;--
-  --bg-color--header: #162b4d;---
-  --link: #fff;
-  --link--hover: #b8b8b8;
-  --bg-footer-color: #162b4d;;
-}*/
-
-body {
+ /* &#x2261*/
+ body {
   font-family: roboto;
   font-weight: 100;
   background-color: #0B192F;
@@ -38,28 +27,26 @@ p {
   line-height: 1.5;
   font-size: 14px;
 }
+
 .post-1 {
-	background: #B71757;
+ background: #B71757;
 }
 .post-2 {
-	background: #0D7E71;
+ background: #0D7E71;
 }
 .post-3 {
-	background: #b1660e;
+ background: #b1660e;
 }
 .post-4 {
-	background: #d12767;
+ background: #d12767;
 }
 .post-5 {
-	background: #2d95bb;
+ background: #2d95bb;
 }
 
 .main-wrapper {
   max-width: 1200px;
   margin: auto;
-  /*display: flex;*/
-  /*margin: 0 auto;*/
-  /*margin: 0 14%;*/
 }
 .top-wrapper {
   display: flex;
@@ -67,6 +54,7 @@ p {
   align-items: center;
   height: 80px;
   background-color: #162B4D;
+  align-items: center;
 }
 .top-wrapper .logo {
   margin-right: auto;
@@ -77,8 +65,22 @@ p {
 .top-wrapper .logo p span{
   color: #B71757
 }
+.top-wrapper nav {
+  display: flex;
+  align-self: stretch;
+}
 .top-wrapper nav a {
-  margin-right: 35px;
+  padding: 0 23px;
+  display: flex;
+  text-align: center;
+}
+.top-wrapper nav a p {
+  align-self: center;
+  font-size: 16px;
+  font-weight: 300;
+}
+.top-wrapper nav a:hover {
+  background-color: #283D5F;
 }
 
 main {
@@ -96,6 +98,18 @@ main {
 .post-wrap .post {
   display: flex;
 }
+.post-wrap .post .post-wrap-link{
+  display: flex;
+}
+.post-wrap .post:nth-child(even) .post-wrap-link{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.post-wrap .post:nth-child(even) .post-text__wrap {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: right;
+}
 .post-wrap .post picture{
   flex: 1;
 }
@@ -103,6 +117,7 @@ main {
   flex: 1;
   display: flex;
 }
+
 .post-img {
   height: 100%;
 }
@@ -111,20 +126,25 @@ main {
 }
 .post-text h3.post-text__title {
   font-size: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .post-description {
-   opacity: 0.8;
+ opacity: 0.8;
 }
 .post-time {
   display: flex;
   flex-direction: column;
   font-size: 22px;
-  padding: 5px;
+  padding: 10px;
   opacity: 0.4;
+  align-items: center;
 }
 .post-time span{
   font-size: 44px;
+}
+
+.post:hover img, .post:hover .post-text__title{
+  filter: opacity(0.5);
 }
 
 aside {
@@ -148,5 +168,20 @@ aside {
   font-weight: 300;
 }
 .news--description {
-  opacity: 0.8;
+  color: grey;
+}
+
+footer {
+  display: flex;
+  padding: 0 20px;
+  /*align-items: center;*/
+  height: 80px;
+  background-color: #162b4d;
+  align-items: center;
+}
+footer p {
+  opacity: 0.5;
+}
+footer .copyright {
+  margin-right: auto;
 }
