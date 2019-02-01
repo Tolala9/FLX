@@ -36,6 +36,11 @@ p {
   padding: 10px 50px;
   background-color: #000000;
   opacity: .5;
+  transition: ease .25s;
+}
+
+.btn-nav:hover {
+  opacity: .9;
 }
 
 .btn-exp {
@@ -45,12 +50,22 @@ p {
   text-transform: capitalize;
   font-weight: bold;
   padding: 10px;
+  transition: ease .25s;
+}
+
+.btn-exp:hover {
+  background-color: #0b8f8b;
 }
 
 .btn-sub {
   color: #FFFFFF;
   background-color: #097774;
   font-weight: bold;
+  transition: ease .25s;
+}
+
+.btn-sub:hover {
+  background-color: #0b8f8b;
 }
 
 /*  END Buttons */
@@ -87,6 +102,11 @@ header .top-wrapper .logo {
 
 header .top-wrapper .user-reg a {
   color: #FFFFFF;
+  transition: ease .25s;
+}
+
+header .top-wrapper .user-reg a:hover {
+  color: #097774;
 }
 
 header .top-wrapper .user-reg a:first-child {
@@ -317,4 +337,9 @@ footer .footer-bottom nav a {
   color: #000000;
   margin-left: 20px;
   text-transform: capitalize;
+  transition: .25s;
+}
+
+footer .footer-bottom nav a:hover {
+  color: #097774;
 }
