@@ -26,6 +26,7 @@ That's a repository for the list of made tasks by me in the learning process on 
 
 - [x] HTML5, BEM;
 - [x] CSS3
+- [x] SASS, SCSS
 - [x] ...will be filled in process
 
 ### Author contacts

@@ -260,11 +260,11 @@ form input[type=email] {
   margin-right: 10px;
   color: #000000;
   font-size: 14px;
+  padding: 10px;
 }
 
 form input[type=email]::placeholder {
   color: #000000;
-  padding: 10px;
 }
 
 footer {
