@@ -1,3 +1,4 @@
+let result;
 typeValues();
 function typeValues() {
 	const startPrice = parseFloat(prompt("Type the price"));
@@ -17,7 +18,7 @@ Saved: ${+savedMoney.toFixed(2)}`;
 		showResult(result);
 	} else {
 		result = "Invalid input data";
-		showResult(result);
+		showResult(result); 
 	}
 }
 
