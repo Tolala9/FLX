@@ -1,46 +1,31 @@
-checkLogin();
+const login = prompt("Plese enter your Login");
+const currentTime = new Date().getHours();
 
-function checkLogin() {
-	let login = prompt("Plese enter your Login");
-	if (login === "" || login === null) {
-		alert("Canceled");
-	}else if ( login.length < 4 ) {
-		alert("I don't know any users having name length less than 4 symbols");
-	} else if (login === "User" || login === "Admin") {
-		checkPassword(login);
-	} else {
-		alert("I don’t know you");
-	}
-}
+if (login === "" || login === null) {
+	alert("Canceled");
+} else if ( login.length < 4 ) {
+	alert("I don't know any users having name length less than 4 symbols");
+} else if (login === "User" || login === "Admin") {
 
-function checkPassword(login) {
-	let password = prompt("Plese enter your Password");
+	const password = prompt("Plese enter your Password");
 	if (password === "" || password === null) {
 		alert("Canceled");
 	} else if (login === "User" && password === "UserPass") {
-		greeting(login);
+		if (currentTime < 20) {
+			alert("Good day, dear User!");
+		} else {
+			alert("Good evening, dear User!");
+		}
 	} else if (login === "Admin" && password === "RootPass") {
-		greeting(login);
+		if (currentTime < 20) {
+			alert("Good day, dear Admin!");
+		} else {
+			alert("Good evening, dear Admin!");
+		}
 	} else {
 		alert("Wrong password");
 	}
+
+} else {
+	alert("I don’t know you");
 }
-
-function greeting(login) {
-	let currentTime = new Date().getHours();
-	if (currentTime < 20) {
-		if (login === "User") {
-			alert("Good day, dear User!");
-		} else if (login === "Admin") {
-			alert("Good day, dear Admin!");
-		}
-	} else if (currentTime >= 20) {
-		if (login === "User") {
-			alert("Good evening, dear User!");
-		} else if (login === "Admin") {
-			alert("Good evening, dear Admin!");
-		}
-	}
-}
-
-
