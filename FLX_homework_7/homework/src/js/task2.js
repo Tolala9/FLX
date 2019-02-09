@@ -1,81 +1,85 @@
-let minNumber = 0;
-let maxNumber = 5;
-let attempts  = 3;
+let attemptsQuantity = 4;
+let totalPrize = 0;
+let winStatus = false;
+let enteredNumber;
+let maxAttemptPrize;
+// let gameQuantity = 0;
 
-let firstAttemptprize 	= 10;
-let seccondAttemptprize = 5;
-let thirtAttemptprize 	= 2;
+if (confirm("Do you want to play a game?")) {
+		
+		let maxNumberOfRange = 5;
+				let startMaxAttemptPrize = 10;
 
-let prize			= 0;
-let winStatus;
+	do {
+		let randomNumber = Math.floor(Math.random() * (maxNumberOfRange + 1));
 
-makeDecision();
+		console.log(randomNumber); //should delete before production
+		attempt = attemptsQuantity;
 
-function makeDecision() {
-	let decision = confirm("Do you want to play a game?");
-	if (decision) {
-		runGame(minNumber, maxNumber);
-	} else {
-		alert("You did not become a millionaire, but can.");
-	}
-}
 
-function creatingTask() {
-	let task = `Enter a number from ${minNumber} to ${maxNumber}
-Attempts left: 3 
-Total prize: 10
-Possible prize on current attempt: 30`;
-	return task;
-}
 
-function runGame(minNumber, maxNumber) {
-	let goalNumber = getRandomNumber(minNumber, maxNumber);
-	for (var i = 0; i < attempts; i++) {
-		console.log(goalNumber);
-		let enteredNumber = parseInt(prompt(creatingTask()));
-		if (isNaN(enteredNumber)) {
-			alert("Invalid input data");
-		} else {
-			checkNumber(enteredNumber, goalNumber)
-			// gameResult =
-			if (winStatus && i == 0 ) {
-				prize += firstAttemptprize;
-			} else if (winStatus && i == 1 ) {
-				prize += seccondAttemptprize;			
-			} else if (winStatus && i == 2 ) {
-				prize += thirtAttemptprize;			
+		
+	
+
+		// if (winStatus) {
+		// 	let maxAttemptPrize 	= 10;
+		// }
+
+
+
+		for (attempt; attempt > 0;  attempt--) {
+
+				if (attempt !== attemptsQuantity) {
+					maxAttemptPrize = Math.floor(startMaxAttemptPrize / 2);
+					startMaxAttemptPrize = maxAttemptPrize;
+				} else {
+					maxAttemptPrize = startMaxAttemptPrize;
+				}
+			
+			enteredNumber = parseInt(prompt(
+`Enter a number from 0 to ${maxNumberOfRange}
+Attempts left: ${attempt}
+Total prize: ${totalPrize}
+Possible prize on current attempt: ${maxAttemptPrize}`
+				));
+
+			if (enteredNumber === randomNumber) {
+				totalPrize += maxAttemptPrize;
+				alert(`Congratulation! Your prize is: ${totalPrize}`);
+				maxNumberOfRange *= 2;
+				startMaxAttemptPrize *= 3;
+				winStatus = true;
+				
+				break;
+
+			} else {
+				winStatus = false;
+				continue;
+				// alert(`Thank you for a game. Your prize is: ${totalPrize}`);
 			}
+
+
+			// alert(`Thank you for a game. Your prize is: ${totalPrize}`);
 		}
-	}
-		alert(prize);
+		if (!winStatus) {
+			alert(`Thank you for a game. Your prize is: ${totalPrize}`);			
+			maxNumberOfRange = 5;
+			totalPrize = 0;
+			// startMaxAttemptPrize = 10;
+		} else {
+			
+			continue;
+		}
+
+
+
+		
+
+
+
+	} while (confirm("Do you want to play a game again?"));
+
+
+} else {
+	alert("You did not become a millionaire, but can.");
 }
-
-// function playGame(enteredNumber) {
-// 	for (var i = 0; i < 3; i++) {
-// 		enterNumber();
-// 	}
-// }
-
-function checkNumber(enteredNumber, goalNumber) {
-	if (goalNumber === enteredNumber) {
-		alert("WIN");
-		let winStatus = true;
-	} else {
-		alert(`Thank you for a game. Your prize is: ${prize}`);
-		let winStatus = false;
-	}
-}
-
-
-function getRandomNumber(minNumber, maxNumber) {
-	return Math.floor(Math.random() * ((maxNumber + 1) - minNumber ) + minNumber);
-}
-
-function showTask(task) {
-	prompt(task);
-	return prompt(task);
-}
-
-// function gameResult {
-// 	confirm()
-// }
