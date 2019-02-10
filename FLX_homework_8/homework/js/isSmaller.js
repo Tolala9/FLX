@@ -8,7 +8,6 @@ function isSmaller (a, b) {
   } else {
     return !isBigger(a, b);
   }
-  
 }
 
 isSmaller(5, -1);
