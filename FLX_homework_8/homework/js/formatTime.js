@@ -10,4 +10,4 @@ function formatTime(x) {
 		return "It's not a positive integer number";
 	}
 }
-console.log(formatTime(3601));
+formatTime(3601);
