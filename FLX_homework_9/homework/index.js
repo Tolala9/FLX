@@ -9,34 +9,94 @@ function findTypes() {
 
 /* Task #2 */
 function executeforEach(arr, func) {
-	let res = [];
-	for (var i = 0; i < arr.length; i++) {
-		let elem = func(arr[i]);
-		if (findTypes(elem) !== "undefined" ) {
-			if (elem) {
-				res.push(arr[i]);
-			} 
-		} 
+	for (let i = 0; i < arr.length; i++) {
+		func(arr[i]);
 	}
-	return res;
 }
+
+executeforEach([1,2,3], function(el) { console.log(el) });
 
 /* Task #3 */
-function mapArray(x, y) {
-	return executeforEach(x, y);
+function mapArray(arr, func) {
+	newArr = [];
+	executeforEach(arr, function(elem) {
+		newArr.push(func(elem));
+	})
+	return newArr;
 }
 
-mapArray([2, 5, 8], function(el) { 
-	return el + 3;
-});
+console.log(mapArray([2, 5, 8], function(el) { 
+	return el + 2;
+}));
 
-/* Task #4 */
-function filterArray(x, y) {
-	return executeforEach(x, y);
+/*Task #4 */
+function filterArray(arr, func) {
+	let res = [];
+	executeforEach(arr, function(elem) {
+		if (func(elem)) {
+			res.push(elem);
+		}
+	});
+	return res;
 }	
 
-filterArray([2, 5, 8], function(el) {
- return el > 3;
-});
+console.log(filterArray([2, 5, 8], function(el) {
+	return el > 3;
+}));
+
+
+/* Task #5 */
+let data = [
+{
+	"_id": "5b5e3168c6bf40f2c1235cd6",
+	"index": 0,
+	"age": 39,
+	"eyeColor": "green",
+	"name": "Stein",
+	"favoriteFruit": "apple"
+},
+{
+	"_id": "5b5e3168e328c0d72e4f27d8",
+	"index": 1,
+	"age": 38,
+	"eyeColor": "blue",
+	"name": "Cortez",
+	"favoriteFruit": "strawberry"
+},
+{
+	"_id": "5b5e3168cc79132b631c666a",
+	"index": 2,
+	"age": 2,
+	"eyeColor": "blue",
+	"name": "Suzette",
+	"favoriteFruit": "apple"
+},
+{
+	"_id": "5b5e31682093adcc6cd0dde5",
+	"index": 3,
+	"age": 19,
+	"eyeColor": "green",
+	"name": "George",
+	"favoriteFruit": "banana"
+}
+];
+
+
+
+function getAmountOfAdultPeople(data) {
+	let res = 0;
+	let filteredData = filterArray(data, function(el) {
+		if (el.age > 18) {
+			res++
+		}
+	});
+
+	return res;
+
+}
+
+console.log(getAmountOfAdultPeople(data));
+
+
 
 
