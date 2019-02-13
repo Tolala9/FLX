@@ -12,7 +12,7 @@ function executeforEach(arr, func) {
 	let res = [];
 	for (var i = 0; i < arr.length; i++) {
 		let elem = func(arr[i]);
-		if (findTypes(elem) !== "undefined" )  {
+		if (findTypes(elem) !== "undefined" ) {
 			if (elem) {
 				res.push(arr[i]);
 			} 
@@ -20,17 +20,23 @@ function executeforEach(arr, func) {
 	}
 	return res;
 }
-executeforEach([1,2,3], function(el) { console.log(el) })
-
 
 /* Task #3 */
 function mapArray(x, y) {
 	return executeforEach(x, y);
 }
 
+mapArray([2, 5, 8], function(el) { 
+	return el + 3;
+});
+
 /* Task #4 */
 function filterArray(x, y) {
 	return executeforEach(x, y);
 }	
+
+filterArray([2, 5, 8], function(el) {
+ return el > 3;
+});
 
 
