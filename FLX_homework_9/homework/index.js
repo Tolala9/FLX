@@ -6,6 +6,7 @@ function findTypes() {
 	}
 	return res;
 }
+findTypes();
 
 /* Task #2 */
 function executeforEach(arr, func) {
@@ -14,11 +15,10 @@ function executeforEach(arr, func) {
 	}
 }
 
-executeforEach([1,2,3], function(el) { console.log(el) });
 
 /* Task #3 */
 function mapArray(arr, func) {
-	newArr = [];
+	let newArr = [];
 	executeforEach(arr, function(elem) {
 		newArr.push(func(elem));
 	})
@@ -85,7 +85,7 @@ let data = [
 
 function getAmountOfAdultPeople(data) {
 	let res = 0;
-	let filteredData = filterArray(data, function(el) {
+	filterArray(data, function(el) {
 		if (el.age > 18) {
 			res++
 		}
@@ -146,3 +146,18 @@ function showFormattedDate(date) {
 }
 
 showFormattedDate(new Date('2019-01-27T01:10:00'));
+
+/* Task #10 */
+function isEvenYear(date) {
+	let year = date.getFullYear();
+	console.log(year % 2 === 0);
+}
+
+isEvenYear(new Date('2019-01-27T01:10:00'));
+
+function isEvenMonth(date) {
+	let month = date.getMonth() + 1;
+	console.log(month % 2 === 0);
+}
+
+isEvenMonth(new Date('2019-02-27T01:10:00'))
