@@ -111,3 +111,12 @@ function getGreenAdultBananaLovers(data) {
 console.log(getGreenAdultBananaLovers(data));
 
 /* Task #7 */
+function keys(obj) {
+	let res = [];
+	for ( let key in obj) {
+		res.push(key);
+	}
+	return res;
+}
+
+console.log(keys({keyOne: 1, keyTwo: 2, keyThree: 3}));
