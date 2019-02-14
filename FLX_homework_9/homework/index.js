@@ -114,8 +114,11 @@ console.log(getGreenAdultBananaLovers(data));
 function keys(obj) {
 	let res = [];
 	for ( let key in obj) {
-		res.push(key);
+		if (obj.hasOwnProperty(key)) {
+			res.push(key);
+		}
 	}
+
 	return res;
 }
 
@@ -125,9 +128,21 @@ console.log(keys({keyOne: 1, keyTwo: 2, keyThree: 3}));
 function values(obj) {
 	let res = [];
 	for (let key in obj) {
-		res.push(obj[key]);
+		if (obj.hasOwnProperty(key)) {
+			res.push(obj[key]);
+		}
 	}
 	return res;
 }
 
 console.log(values({keyOne: 1, keyTwo: 2, keyThree: 3}));
+
+/* Task #9 */
+function showFormattedDate(date) {
+	let months = ['Jan','Feb','Mar','Apr',
+								'May','Jun','Jul','Aug',
+								'Sep','Oct','Nov','Dec']
+	console.log(`Date: ${date.getDate()} of ${months[date.getMonth()]}, ${date.getFullYear()} `);
+}
+
+showFormattedDate(new Date('2019-01-27T01:10:00'));
