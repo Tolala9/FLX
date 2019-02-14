@@ -120,3 +120,14 @@ function keys(obj) {
 }
 
 console.log(keys({keyOne: 1, keyTwo: 2, keyThree: 3}));
+
+/* Task #8 */
+function values(obj) {
+	let res = [];
+	for (let key in obj) {
+		res.push(obj[key]);
+	}
+	return res;
+}
+
+console.log(values({keyOne: 1, keyTwo: 2, keyThree: 3}));
