@@ -90,13 +90,24 @@ function getAmountOfAdultPeople(data) {
 			res++
 		}
 	});
-
 	return res;
-
 }
 
 console.log(getAmountOfAdultPeople(data));
 
+/* Task #6 */
+function getGreenAdultBananaLovers(data) {
+	let filteredData = filterArray(data, function(el) {
+		return el.age > 18 
+		&& el.favoriteFruit === "banana" 
+		&& el.eyeColor === "green";
+	})
+	let mappedData = mapArray(filteredData, function(el) {
+		return el.name;
+	})
+	return mappedData;
+}
 
+console.log(getGreenAdultBananaLovers(data));
 
-
+/* Task #7 */
