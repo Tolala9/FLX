@@ -12,6 +12,16 @@ function userCard(index) {
 
 		putCredits: function(amount) {
 			balance += amount;
+		},
+
+		takeCredits: function(amount) {
+			if (transactionLimit <= amount ) {
+				console.error("Your transaction limit of card is exhausted!");
+			} else if(balance <= amount ){
+				console.error("Your card balance is exhausted!");
+			} else {
+				balance -= amount;
+			}
 		}
 
 	}
@@ -22,3 +32,4 @@ function userCard(index) {
 let card3 = userCard(3);
 card3.getCardOptions();
 card3. putCredits(150);
+card3. takeCredits(50);
