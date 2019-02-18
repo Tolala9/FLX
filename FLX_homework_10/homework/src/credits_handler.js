@@ -22,6 +22,10 @@ function userCard(index) {
 			} else {
 				balance -= amount;
 			}
+		},
+
+		setTransactionLimit: function(amount) {
+			transactionLimit = amount;
 		}
 
 	}
@@ -31,5 +35,6 @@ function userCard(index) {
 
 let card3 = userCard(3);
 card3.getCardOptions();
-card3. putCredits(150);
-card3. takeCredits(50);
+card3.putCredits(150);
+card3.takeCredits(50);
+card3.setTransactionLimit(500);
