@@ -13,7 +13,7 @@ rootNode.insertAdjacentHTML("beforeend", headerHTML);
 let formHTML = `
 <form class="todo-form">
 	<input id="addTaskInput" class="add-task-input" type="text" placeholder="Add New Action" required>
-	<button id="addTaskButton" class="add-task-btn"><i class="material-icons">add_box</i></button>
+	<button id="addTaskButton" class="add-task-btn btn--disabled" type="button" disabled ><i class="material-icons">add_box</i></button>
 </form>
 <div class="divider-line"></div>`;
 rootNode.insertAdjacentHTML("beforeend", formHTML);
@@ -32,3 +32,20 @@ let tasks = [];
 let maxTasks = 10;
 
 let taskInput = document.querySelector('#addTaskInput');
+let taskButtonAdd = document.querySelector('#addTaskButton');
+
+
+
+window.onload = function () {
+	taskInput.onkeyup = function() {
+		if (taskInput.value.trim()) {
+			taskButtonAdd.classList.remove("btn--disabled");
+			taskButtonAdd.disabled = false;
+		} else {
+			taskButtonAdd.classList.add("btn--disabled");
+			taskButtonAdd.disabled = true;
+
+		}
+	}
+}
+

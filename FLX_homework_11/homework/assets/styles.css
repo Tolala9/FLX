@@ -72,6 +72,9 @@ ul {
 	margin-left: 10px;
 	align-items: stretch;
 }
+.btn--disabled {
+	cursor: not-allowed;
+}
 
 .divider-line {
 	display: block;
@@ -99,7 +102,7 @@ ul {
 	margin-left: auto;
 }
 .material-icons {
-	cursor: pointer;
+	/*cursor: pointer;*/
 	font-size: 28px;
 }
 
