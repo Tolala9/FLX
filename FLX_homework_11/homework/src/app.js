@@ -1,12 +1,13 @@
 let rootNode = document.getElementById("root");
 
+
 /* Creating HTML layout */
 rootNode.classList.add("todo-wrapper");
 
 let headerHTML = `
 <header class="todo-title">
 	<h1 class="todo-title__text">TODO Cat List</h1>
-	<p class="notification hidden">Maximum item per list are created!</p>
+	<p id="notification" class="notification hidden">Maximum item per list are created!</p>
 </header>`;
 rootNode.insertAdjacentHTML("beforeend", headerHTML);
 
@@ -27,25 +28,83 @@ let footerHTML = `
 </footer>`;
 rootNode.insertAdjacentHTML("beforeend", footerHTML);
 
-/* Creating HTML layout */
-let tasks = [];
+let taskItemPattern = `
+<li class="todo-list__item">
+	<span class="list__item--checkbox">
+		<i class="material-icons">check_box_outline_blank</i>
+	</span>
+	<p class="list__item--text"></p>
+	<span class="list__item--delete">
+		<i class="material-icons">delete</i>
+	</span>
+</li>`;
+
+
 let maxTasks = 10;
 
 let taskInput = document.querySelector('#addTaskInput');
 let taskButtonAdd = document.querySelector('#addTaskButton');
+let notification = document.querySelector('#notification');
+let list = document.querySelector('.todo-list');
 
-
+let form = document.querySelector('.todo-form');
 
 window.onload = function () {
-	taskInput.onkeyup = function() {
-		if (taskInput.value.trim()) {
-			taskButtonAdd.classList.remove("btn--disabled");
-			taskButtonAdd.disabled = false;
-		} else {
-			taskButtonAdd.classList.add("btn--disabled");
-			taskButtonAdd.disabled = true;
+	taskInput.onkeyup =  function() {
+		checkInputField();
+	}
 
-		}
+	taskButtonAdd.onclick = function() {
+		let newTask = showTask(taskInput.value);
+		list.appendChild(newTask);
+		taskInput.value = "";
+		checkInputField();
 	}
 }
 
+let showTask = function(text) {
+	let newItem = document.createElement("li")
+	newItem.classList.add("todo-list__item");
+	newItem.innerHTML = `
+	<span class="list__item--checkbox">
+			<i class="material-icons">check_box_outline_blank</i>
+		</span>
+		<p class="list__item--text">${text}</p>
+		<span class="list__item--delete">
+			<i class="material-icons">delete</i>
+	</span>
+	`;
+	return newItem;
+}
+
+let checkInputField = function() {
+	if (taskInput.value.trim()) {
+		taskButtonAdd.classList.remove("btn--disabled");
+		taskButtonAdd.disabled = false;
+	} else {
+		taskButtonAdd.classList.add("btn--disabled");
+		taskButtonAdd.disabled = true;
+
+	}
+}
+
+
+// function showTask(task) {
+// 	listHTML.insertAdjacentHTML("beforeend", taskItemPattern);
+// 	let taskItem = document.querySelector(".todo-list__item").cloneNode(true);
+// 	let taskText = document.querySelector
+// }
+// showTask("hello");
+
+function addTask() {
+	if (tasks.length >= maxTasks) {
+		notification.classList.remove("hidden");
+		taskInput.disabled = true;
+		taskInput.required = false;;
+	} else {
+		
+		// tasks.push({
+		// 	task: 
+		// });
+	}
+};
