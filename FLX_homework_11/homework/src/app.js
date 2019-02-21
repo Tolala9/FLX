@@ -1,7 +1,7 @@
 let rootNode = document.getElementById("root");
 
 
-/* Creating HTML layout */
+/* Creating start HTML layout */
 rootNode.classList.add("todo-wrapper");
 
 let headerHTML = `
@@ -27,38 +27,35 @@ let footerHTML = `
 	<img class="footer__img" src="assets/img/cat.png" alt="Cat paw">
 </footer>`;
 rootNode.insertAdjacentHTML("beforeend", footerHTML);
-
-let taskItemPattern = `
-<li class="todo-list__item">
-	<span class="list__item--checkbox">
-		<i class="material-icons">check_box_outline_blank</i>
-	</span>
-	<p class="list__item--text"></p>
-	<span class="list__item--delete">
-		<i class="material-icons">delete</i>
-	</span>
-</li>`;
+/* ======= */
 
 
-let maxTasks = 10;
+/* ======= */
+let maxTasks = 2;
 
 let taskInput = document.querySelector('#addTaskInput');
 let taskButtonAdd = document.querySelector('#addTaskButton');
 let notification = document.querySelector('#notification');
-let list = document.querySelector('.todo-list');
-
 let form = document.querySelector('.todo-form');
+let list = document.querySelector('.todo-list');
+let taskItem = document.querySelector('.todo-list__item')
+
 
 window.onload = function () {
-	taskInput.onkeyup =  function() {
-		checkInputField();
-	}
+	checkInputField();
+	addNewTask();
+	
+}
 
+let addNewTask = function() {
+	checkTaskAmount();
 	taskButtonAdd.onclick = function() {
-		let newTask = showTask(taskInput.value);
-		list.appendChild(newTask);
-		taskInput.value = "";
-		checkInputField();
+			checkInputField();
+			let newTask = showTask(taskInput.value);
+			list.appendChild(newTask);
+			checkTaskAmount();
+			taskInput.value = "";
+			disabledAddBtn();
 	}
 }
 
@@ -78,33 +75,35 @@ let showTask = function(text) {
 }
 
 let checkInputField = function() {
-	if (taskInput.value.trim()) {
-		taskButtonAdd.classList.remove("btn--disabled");
-		taskButtonAdd.disabled = false;
-	} else {
-		taskButtonAdd.classList.add("btn--disabled");
-		taskButtonAdd.disabled = true;
-
+	taskInput.onkeyup = function() {
+		if (taskInput.value.trim()) {
+			taskButtonAdd.classList.remove("btn--disabled");
+			taskButtonAdd.disabled = false;
+		} else {
+			taskButtonAdd.classList.add("btn--disabled");
+			taskButtonAdd.disabled = true;
+		}
 	}
 }
 
-
-// function showTask(task) {
-// 	listHTML.insertAdjacentHTML("beforeend", taskItemPattern);
-// 	let taskItem = document.querySelector(".todo-list__item").cloneNode(true);
-// 	let taskText = document.querySelector
-// }
-// showTask("hello");
-
-function addTask() {
-	if (tasks.length >= maxTasks) {
-		notification.classList.remove("hidden");
-		taskInput.disabled = true;
-		taskInput.required = false;;
+function checkTaskAmount() {
+	let taskListLenght = document.querySelectorAll(".todo-list__item").length;
+	if (taskListLenght < maxTasks) {
+		taskButtonAdd.classList.remove("btn--disabled");
+		taskButtonAdd.disabled = false;
+		taskInput.required = true;
+		taskInput.disabled = false;
+		notification.classList.add("hidden");
 	} else {
-		
-		// tasks.push({
-		// 	task: 
-		// });
+		taskButtonAdd.classList.add("btn--disabled");
+		taskButtonAdd.disabled = true;
+		taskInput.required = false;
+		taskInput.disabled = true;
+		notification.classList.remove("hidden");
 	}
 };
+
+function disabledAddBtn() {
+	taskButtonAdd.classList.add("btn--disabled");
+	taskButtonAdd.disabled = true;
+}
