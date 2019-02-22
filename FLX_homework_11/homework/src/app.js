@@ -2,7 +2,6 @@ let rootNode = document.getElementById("root");
 
 /* Creating start HTML layout */
 rootNode.classList.add("todo-wrapper");
-
 let headerHTML = `
 <header class="todo-title">
 	<h1 class="todo-title__text">TODO Cat List</h1>
@@ -26,9 +25,9 @@ let footerHTML = `
 	<img class="footer__img" src="assets/img/cat.png" alt="Cat paw">
 </footer>`;
 rootNode.insertAdjacentHTML("beforeend", footerHTML);
-/* ========== */
+/* End Creating start HTML layout */
 
-let maxTasks = 4;
+let maxTasks = 10;
 let taskInput = document.querySelector('#addTaskInput');
 let taskButtonAdd = document.querySelector('#addTaskButton');
 let notification = document.querySelector('#notification');
@@ -50,12 +49,14 @@ function addNewTask() {
 		taskInput.value = "";
 		disabledAddBtn();
 		checkAndDelTask();
+		DnDTasks();
 	}
 }
 
 function showTask(text) {
 	let newItem = document.createElement("li")
 	newItem.classList.add("todo-list__item");
+	newItem.setAttribute("draggable", true);
 	newItem.innerHTML = `
 	<span class="list__item--checkbox">
 		<i class="material-icons checkbox">check_box_outline_blank</i>
@@ -117,5 +118,55 @@ function checkAndDelTask() {
 		}
 	})
 }
+
+function DnDTasks() {
+	let dragTask = null;
+	let tasks = document.querySelectorAll(".todo-list__item");
+	for(let task of tasks) {
+		task.addEventListener("dragstart", PerformDragStart, false);
+		task.addEventListener("dragover", PerformDragOver, false);
+		task.addEventListener("dragenter", PerformDragEnter, false);
+		task.addEventListener("dragleave", PerformDragLeave, false);
+		task.addEventListener("dragend", PerformDragEnd, false);
+		task.addEventListener("drop", PerformDrop, false);
+	}
+	function PerformDragStart(e) {
+		dragTask = e.currentTarget;
+		e.currentTarget.style.opacity = '0.4';
+		e.dataTransfer.effectAllowed = 'move';
+		e.dataTransfer.setData('text/html', e.currentTarget.innerHTML);
+	}
+	function PerformDragOver(e) {
+		e.preventDefault(); 
+	}
+	function PerformDragEnter(e) {
+		e.currentTarget.classList.add('over'); 
+	}
+	function PerformDragLeave(e) {
+		e.currentTarget.classList.remove('over'); 
+	}
+	function PerformDragEnd(e) {
+		for(let task of tasks) {
+			task.classList.remove('over'); 
+			task.style.opacity = '1'
+		}
+	}
+	function PerformDrop(e) {
+		if (e.stopPropagation) {
+			e.stopPropagation();
+		} 
+		if (dragTask !== e.currentTarget) {
+			dragTask.innerHTML = e.currentTarget.innerHTML;
+			e.currentTarget.innerHTML = e.dataTransfer.getData("text/html");
+			checkAndDelTask();
+		} 
+		return false;
+	}
+
+}
+
+
+
+
 
 
