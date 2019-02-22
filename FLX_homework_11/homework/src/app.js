@@ -1,15 +1,15 @@
-let rootNode = document.getElementById("root");
+const rootNode = document.getElementById("root");
 
 /* Creating start HTML layout */
 rootNode.classList.add("todo-wrapper");
-let headerHTML = `
+const headerHTML = `
 <header class="todo-title">
 	<h1 class="todo-title__text">TODO Cat List</h1>
 	<p id="notification" class="notification hidden">Maximum item per list are created!</p>
 </header>`;
 rootNode.insertAdjacentHTML("beforeend", headerHTML);
 
-let formHTML = `
+const formHTML = `
 <form class="todo-form">
 	<input id="addTaskInput" class="add-task-input" type="text" placeholder="Add New Action" required>
 	<button id="addTaskButton" class="add-task-btn btn--disabled" type="button" disabled ><i class="material-icons">add_box</i></button>
@@ -17,22 +17,22 @@ let formHTML = `
 <div class="divider-line"></div>`;
 rootNode.insertAdjacentHTML("beforeend", formHTML);
 
-let listHTML = `<ul class="todo-list"></ul>`;
+const listHTML = `<ul class="todo-list"></ul>`;
 rootNode.insertAdjacentHTML("beforeend", listHTML);
 
-let footerHTML = `
+const footerHTML = `
 <footer class="todo-footer">
 	<img class="footer__img" src="assets/img/cat.png" alt="Cat paw">
 </footer>`;
 rootNode.insertAdjacentHTML("beforeend", footerHTML);
 /* End Creating start HTML layout */
 
-let maxTasks = 10;
-let taskInput = document.querySelector('#addTaskInput');
-let taskButtonAdd = document.querySelector('#addTaskButton');
-let notification = document.querySelector('#notification');
-let list = document.querySelector('.todo-list');
-let taskItem = document.querySelector('.todo-list__item');
+const maxTasks = 10;
+const taskInput = document.querySelector('#addTaskInput');
+const taskButtonAdd = document.querySelector('#addTaskButton');
+const notification = document.querySelector('#notification');
+const list = document.querySelector('.todo-list');
+const taskItem = document.querySelector('.todo-list__item');
 
 window.onload = function () {
 	checkInputField();
@@ -106,8 +106,8 @@ function disabledAddBtn() {
 function checkAndDelTask() {
 	let tasks = document.querySelectorAll(".todo-list__item");
 	tasks.forEach((item) => {
-		let checkbox = item.querySelector(".checkbox");
-		let del = item.querySelector(".list__item--delete");
+		const checkbox = item.querySelector(".checkbox");
+		const del = item.querySelector(".list__item--delete");
 		checkbox.onclick = (e) => {
 			e.currentTarget.innerHTML = "check_box";
 		}
