@@ -30,6 +30,7 @@ rootNode.insertAdjacentHTML('beforeend', footerHTML);
 /* End Creating start HTML layout */
 
 const maxTasks = 10;
+const emptyList = 0;
 const taskInput = document.querySelector('#addTaskInput');
 const taskButtonAdd = document.querySelector('#addTaskButton');
 const notification = document.querySelector('#notification');
@@ -85,7 +86,10 @@ function checkInputField() {
 
 function checkTaskAmount() {
 	let taskListLenght = document.querySelectorAll('.todo-list__item').length;
-	if (taskListLenght < maxTasks) {
+	if (taskListLenght === emptyList) {
+		taskButtonAdd.classList.add('btn--disabled');
+		taskButtonAdd.disabled = true;
+	} else if (taskListLenght < maxTasks){
 		taskButtonAdd.classList.remove('btn--disabled');
 		taskButtonAdd.disabled = false;
 		taskInput.required = true;
@@ -117,6 +121,7 @@ function checkAndDelTask() {
 			let task = e.currentTarget.parentNode;
 			task.remove();
 			checkTaskAmount();
+			disabledAddBtn();
 		}
 	})
 }
