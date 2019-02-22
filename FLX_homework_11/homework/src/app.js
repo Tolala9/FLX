@@ -1,6 +1,5 @@
 let rootNode = document.getElementById("root");
 
-
 /* Creating start HTML layout */
 rootNode.classList.add("todo-wrapper");
 
@@ -27,54 +26,49 @@ let footerHTML = `
 	<img class="footer__img" src="assets/img/cat.png" alt="Cat paw">
 </footer>`;
 rootNode.insertAdjacentHTML("beforeend", footerHTML);
-/* ======= */
+/* ========== */
 
-
-/* ======= */
-let maxTasks = 2;
-
+let maxTasks = 4;
 let taskInput = document.querySelector('#addTaskInput');
 let taskButtonAdd = document.querySelector('#addTaskButton');
 let notification = document.querySelector('#notification');
-let form = document.querySelector('.todo-form');
 let list = document.querySelector('.todo-list');
-let taskItem = document.querySelector('.todo-list__item')
-
+let taskItem = document.querySelector('.todo-list__item');
 
 window.onload = function () {
 	checkInputField();
 	addNewTask();
-	
 }
 
-let addNewTask = function() {
+function addNewTask() {
 	checkTaskAmount();
 	taskButtonAdd.onclick = function() {
-			checkInputField();
-			let newTask = showTask(taskInput.value);
-			list.appendChild(newTask);
-			checkTaskAmount();
-			taskInput.value = "";
-			disabledAddBtn();
+		checkInputField();
+		let newTask = showTask(taskInput.value);
+		list.appendChild(newTask);
+		checkTaskAmount();
+		taskInput.value = "";
+		disabledAddBtn();
+		checkAndDelTask();
 	}
 }
 
-let showTask = function(text) {
+function showTask(text) {
 	let newItem = document.createElement("li")
 	newItem.classList.add("todo-list__item");
 	newItem.innerHTML = `
 	<span class="list__item--checkbox">
-			<i class="material-icons">check_box_outline_blank</i>
-		</span>
-		<p class="list__item--text">${text}</p>
-		<span class="list__item--delete">
-			<i class="material-icons">delete</i>
+		<i class="material-icons checkbox">check_box_outline_blank</i>
+	</span>
+	<p class="list__item--text">${text}</p>
+	<span class="list__item--delete">
+		<i class="material-icons">delete</i>
 	</span>
 	`;
 	return newItem;
 }
 
-let checkInputField = function() {
+function checkInputField() {
 	taskInput.onkeyup = function() {
 		if (taskInput.value.trim()) {
 			taskButtonAdd.classList.remove("btn--disabled");
@@ -107,3 +101,21 @@ function disabledAddBtn() {
 	taskButtonAdd.classList.add("btn--disabled");
 	taskButtonAdd.disabled = true;
 }
+
+function checkAndDelTask() {
+	let tasks = document.querySelectorAll(".todo-list__item");
+	tasks.forEach((item) => {
+		let checkbox = item.querySelector(".checkbox");
+		let del = item.querySelector(".list__item--delete");
+		checkbox.onclick = (e) => {
+			e.currentTarget.innerHTML = "check_box";
+		}
+		del.onclick = (e) => {
+			let task = e.currentTarget.parentNode;
+			task.remove();
+			checkTaskAmount();
+		}
+	})
+}
+
+
