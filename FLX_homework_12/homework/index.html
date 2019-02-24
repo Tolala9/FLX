@@ -6,7 +6,42 @@
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-  <div id="root"></div>
+	<div id="root">
+		<div class="app-wrapper">
+
+			<div class="list-page">
+				<h1 class="page-title">Simple TODO aplication</h1>
+				<button id="btn-add--new" class="btn">Add new task</button>
+				<ul id="task-list" class="task-list">
+					<p class="empty-list">TODO is empty</p>
+					<li class="task-list__item">
+						<img class="item-status" src="assets/img/todo-s.png" alt="checkbox">
+						<a class="item-text" href="#">Hello</a>
+						<img class="item-delete" src="assets/img/remove-s.jpg" alt="delete button">
+					</li>
+				</ul>
+			</div>
+
+			<div class="add-task-page">
+				<h1 class="page-title">Add task</h1>
+				<input id="add-new-input" class="input" type="text" >
+				<div class="btns-wrapper">
+					<button id="btn-cancel" class="btn">Cancel</button>
+					<button id="btn-add-item" class="btn">Save changes</button>
+				</div>
+			</div>
+
+			<div class="modify-task-page">
+				<h1 class="page-title">Modify item</h1>
+				<input id="modify-input" class="input" type="text" >
+				<div class="btns-wrapper">
+					<button id="btn-cancel" class="btn">Cancel</button>
+					<button id="btn-modify-item" class="btn">Save changes</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
   <script src="./src/app.js"></script>
 </body>

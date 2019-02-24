@@ -1,2 +1,89 @@
-/* Your styles go here */
+/*  START Reset Syles */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 1%;
 
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul {
+	margin: 0;
+	list-style-type: none;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+/*  END Reset Syles */
+
+.app-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	max-width: 400px;
+	text-align: center;
+}
+.btn {
+	font-size: 22px;
+	margin-top: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	outline: none;
+}
+.empty-list {
+	margin-top: 20px;
+	font-size: 26px;
+	line-height: 1;
+}
+.task-list__item {
+	margin: 20px auto;
+	display: flex;
+	max-width: 300px;
+}
+.item-text {
+	margin: auto;
+	font-size: 26px;
+	line-height: 1;
+}
+.item-status, .item-delete{
+	cursor: pointer;
+}
+
+.add-task-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.input {
+	display: block;
+	font-size: 26px;
+	margin: 20px auto;
+	border-radius: 10px;
+	outline: none;
+	text-indent: 5px;
+}
+.btns-wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.hidden {
+	display: none;
+}
+
+.completed {
+	background-color: grey;
+}
