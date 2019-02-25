@@ -109,18 +109,18 @@ function showTask(task) {
 	newTask.dataset.id = task.id;
 	if(task.isDone) {
 		newTask.classList.add('done');
-		newTask.innerHTML += `<img class="item-status" 
+		newTask.innerHTML += `<img id="item-status" class="item-status" 
 		src="assets/img/done-s.png" alt="checkbox">`;
 		newTask.innerHTML += `<a class="item-text" 
 		href="#">${task.description}</a>`;
-		newTask.innerHTML += `<img class="item-delete" 
+		newTask.innerHTML += `<img id="delete-icon" class="item-delete" 
 		src="assets/img/remove-s.jpg" alt="delete button">`;
 	} else {
-		newTask.innerHTML += `<img class="item-status" 
+		newTask.innerHTML += `<img id="item-status" class="item-status" 
 		src="assets/img/todo-s.png" alt="checkbox">`;
 		newTask.innerHTML += `<a class="item-text" 
 		href="#">${task.description}</a>`;
-		newTask.innerHTML += `<img class="item-delete" 
+		newTask.innerHTML += `<img id="delete-icon" class="item-delete" 
 		src="assets/img/remove-s.jpg" alt="delete button">`;
 	}
 
@@ -137,7 +137,37 @@ function showTaskList(tasks) {
 	} else {
 		taskList.innerHTML = `<p class="empty-list">TODO is empty</p>`;
 	}
+	checkAndDelTask();
 }
 
+function checkAndDelTask() {
+	let taskItems = document.querySelectorAll('.task-list__item');
+	taskItems.forEach((item) => {
+		const checkbox = item.querySelector('#item-status');
+		const del = item.querySelector('#delete-icon');
+		checkbox.onclick = (e) => {
+			const parentItem = e.currentTarget.parentNode;
+			completeTask(parentItem.dataset.id);
+			showTaskList(tasks);
+		}
+		// del.onclick = (e) => {
+		// 	let task = e.currentTarget.parentNode;
+		// 	task.remove();
+		// }
+	})
+}
 
+function completeTask(id) {
+	tasks = tasks.map((item) =>{
+		if(item.id === id) {
+			return {
+				isDone: true,
+				id: item.id,
+				description: item.description  
+			}
+		} else {
+			return item;
+		}
+	});
+}
 
