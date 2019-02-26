@@ -1,9 +1,5 @@
 const rootNode = document.getElementById('root');
 
-// const todoItems = [
-//     {isDone: false, id: 12345, description: 'Todo 1'}
-// ];
-
 /* Creating HTML layout */
 rootNode.classList.add('app-wrapper');
 const listPageHTML = `
@@ -37,6 +33,8 @@ rootNode.insertAdjacentHTML('beforeend', modifyTaskPageHTML);
 
 /* Main variables */
 let tasks = [];
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+let data = JSON.parse(localStorage.getItem('items'));
 
 const listPage = document.querySelector('#page-list');
 const addTaskPage = document.querySelector('#page-add-task');
@@ -51,8 +49,18 @@ window.onload = function () {
 	hashServ();
 	window.onhashchange = hashServ;
 	checkInputField();
-	showTaskList(tasks);
+	showTaskList(data);
 	saveNewTask();
+	// resetLocalStorage();
+}
+
+/* Local Storage functions*/
+function setItemToLocalStorage(){
+	localStorage.setItem('items', JSON.stringify(itemsArray));
+}
+function resetLocalStorage() {
+	localStorage.clear();
+	localStorage.removeItem('items');
 }
 
 /* Serving hash in links */
@@ -89,18 +97,20 @@ function saveNewTask() {
 	addNewInput = document.querySelector('#add-new-input');
 	location.hash = '';
 	addTask(addNewInput.value);
-	showTaskList(tasks);
+	showTaskList(data);
 	addNewInput.value = '';
 	}
 }
 
 function addTask(text) {
-	let indexItem = tasks.length ;
-	tasks.push({
+	let indexItem = data.length ;
+	itemsArray.push({
 		isDone: false,
 		id: 'task_' + ++indexItem,
 		description: text  
 	});
+	setItemToLocalStorage();
+	location.reload();
 }
 
 function showTask(task) {
@@ -127,10 +137,10 @@ function showTask(task) {
 	return newTask;
 }
 
-function showTaskList(tasks) {
+function showTaskList(data) {
 	taskList.innerHTML = '';
-	if (tasks && tasks.length) {
-		tasks.forEach( function(task) {
+	if (data && data.length) {
+		data.forEach( function(task) {
 			let newTask = showTask(task);
 			taskList.appendChild(newTask);
 		});
@@ -148,7 +158,7 @@ function checkAndDelTask() {
 		checkbox.onclick = (e) => {
 			const parentItem = e.currentTarget.parentNode;
 			completeTask(parentItem.dataset.id);
-			showTaskList(tasks);
+			showTaskList(data);
 		}
 		// del.onclick = (e) => {
 		// 	let task = e.currentTarget.parentNode;
@@ -158,16 +168,16 @@ function checkAndDelTask() {
 }
 
 function completeTask(id) {
-	tasks = tasks.map((item) =>{
+	itemsArray = itemsArray.map((item) =>{
 		if(item.id === id) {
-			return {
-				isDone: true,
-				id: item.id,
-				description: item.description  
-			}
-		} else {
-			return item;
+			item.isDone = true;
 		}
+		return item;
 	});
+	setItemToLocalStorage(); 
+	location.reload(); //add to setItemToLocalStorage()
 }
+
+
+
 
