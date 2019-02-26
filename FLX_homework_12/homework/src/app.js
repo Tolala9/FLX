@@ -78,8 +78,6 @@ function getTask(id) {
 	return tasks.find((item) => item.id === id);
 }
 
-
-
 /* Serving hash in links */
 function hashServ() {
 	const hash = location.hash;
@@ -97,15 +95,15 @@ function hashServ() {
 	}
 }
 
-
+/* Add and cancel button events */
 btnAdd.onclick = (e) => {
 	location.hash = '#/add';
 }
 
 btnCancel.forEach((item) => {
-    item.onclick = function(e) {
-        location.hash = '';
-    }
+	item.onclick = function(e) {
+		location.hash = '';
+	}
 });
 
 function checkInputField(inputType, saveButton) {
@@ -198,7 +196,7 @@ function checkAndDelTask() {
 }
 
 function completeTask(id) {
-	itemsArray = itemsArray.map((item) =>{
+	itemsArray = itemsArray.map((item) => {
 		if(item.id === id) {
 			item.isDone = true;
 		}
@@ -219,17 +217,6 @@ function removeTask(id) {
 	let tasks = getData();
 	saveToNewData(tasks.filter((task) => task.id !== id));
 	location.reload(); 
-}
-
-function completeTask(id) {
-	itemsArray = itemsArray.map((item) =>{
-		if(item.id === id) {
-			item.isDone = true;
-		}
-		return item;
-	});
-	setItemToLocalStorage(); 
-	location.reload();
 }
 
 function eventInUpdatePage() {
