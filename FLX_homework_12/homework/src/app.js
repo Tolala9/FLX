@@ -66,6 +66,10 @@ function resetLocalStorage() {
 function getData() {
 	return JSON.parse(localStorage.getItem('items')) || [];
 }
+function saveToNewData(items) {
+	localStorage.setItem('items', JSON.stringify(items));
+}
+	
 
 /* Serving hash in links */
 function hashServ() {
@@ -166,10 +170,12 @@ function checkAndDelTask() {
 			completeTask(parentItem.dataset.id);
 			showTaskList();
 		}
-		// del.onclick = (e) => {
-		// 	let task = e.currentTarget.parentNode;
-		// 	task.remove();
-		// }
+		del.onclick = (e) => {
+			let task = e.currentTarget.parentNode;
+			removeTask(task.dataset.id);
+			console.log(task.dataset.id); //
+			showTaskList();
+		}
 	})
 }
 
@@ -188,4 +194,11 @@ function sortTasks() {
 	let checked = getData().filter(item => item.isDone === true);
 	let unchecked = getData().filter(item => item.isDone === false);
 	return unchecked.concat(checked);
+}
+
+function removeTask(id) {
+	let tasks = getData();
+	console.log(tasks);
+	saveToNewData(tasks.filter((task) => task.id !== id));
+	location.reload(); 
 }
