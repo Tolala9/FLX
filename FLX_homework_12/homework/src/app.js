@@ -34,6 +34,7 @@ rootNode.insertAdjacentHTML('beforeend', modifyTaskPageHTML);
 /* Main variables */
 let tasks = [];
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+localStorage.setItem('items', JSON.stringify(itemsArray));
 let data = JSON.parse(localStorage.getItem('items'));
 
 const listPage = document.querySelector('#page-list');
@@ -61,6 +62,9 @@ function setItemToLocalStorage(){
 function resetLocalStorage() {
 	localStorage.clear();
 	localStorage.removeItem('items');
+}
+function getData() {
+	return JSON.parse(localStorage.getItem('items')) || [];
 }
 
 /* Serving hash in links */
@@ -97,7 +101,7 @@ function saveNewTask() {
 	addNewInput = document.querySelector('#add-new-input');
 	location.hash = '';
 	addTask(addNewInput.value);
-	showTaskList(data);
+	showTaskList();
 	addNewInput.value = '';
 	}
 }
@@ -137,10 +141,12 @@ function showTask(task) {
 	return newTask;
 }
 
-function showTaskList(data) {
+function showTaskList() {
+	let data = getData();
+	let sortedData = sortTasks();
 	taskList.innerHTML = '';
-	if (data && data.length) {
-		data.forEach( function(task) {
+	if (sortedData && sortedData.length) {
+		sortedData.forEach( function(task) {
 			let newTask = showTask(task);
 			taskList.appendChild(newTask);
 		});
@@ -158,7 +164,7 @@ function checkAndDelTask() {
 		checkbox.onclick = (e) => {
 			const parentItem = e.currentTarget.parentNode;
 			completeTask(parentItem.dataset.id);
-			showTaskList(data);
+			showTaskList();
 		}
 		// del.onclick = (e) => {
 		// 	let task = e.currentTarget.parentNode;
@@ -178,6 +184,8 @@ function completeTask(id) {
 	location.reload(); //add to setItemToLocalStorage()
 }
 
-
-
-
+function sortTasks() {
+	let checked = getData().filter(item => item.isDone === true);
+	let unchecked = getData().filter(item => item.isDone === false);
+	return unchecked.concat(checked);
+}
