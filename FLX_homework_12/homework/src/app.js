@@ -41,8 +41,10 @@ const listPage = document.querySelector('#page-list');
 const addTaskPage = document.querySelector('#page-add-task');
 const modifyTaskPage = document.querySelector('#page-modify-task');
 let addNewInput = document.querySelector('#add-new-input');
+let modifyInput = document.querySelector('#modify-input');
 const btnAdd = document.querySelector('#btn-add--new');
 const btnAddItem = document.querySelector('#btn-add-item');
+const btnModifyItem = document.querySelector('#btn-modify-item');
 const taskList = document.querySelector('#task-list');
 const btnCancel = document.querySelectorAll('#btn-cancel');
 
@@ -50,7 +52,8 @@ const btnCancel = document.querySelectorAll('#btn-cancel');
 window.onload = function () {
 	hashServ();
 	window.onhashchange = hashServ;
-	checkInputField();
+	checkInputField(addNewInput, btnAddItem);
+	checkInputField(modifyInput, btnModifyItem);
 	showTaskList(data);
 	saveNewTask();
 	// resetLocalStorage();
@@ -70,7 +73,12 @@ function getData() {
 function saveToNewData(items) {
 	localStorage.setItem('items', JSON.stringify(items));
 }
-	
+function getTask(id) {
+	const tasks = getData();
+	return tasks.find((item) => item.id === id);
+}
+
+
 
 /* Serving hash in links */
 function hashServ() {
@@ -81,13 +89,15 @@ function hashServ() {
 
 	if (location.hash === '#/add') {
 		addTaskPage.classList.remove('hidden');
-	} else if((/\/modify\/task_\d+$/).test(hash)) {
+	} else if ((/\/modify\/task_\d+$/).test(hash)) {
 		modifyTaskPage.classList.remove('hidden');
-		
+		eventInUpdatePage();
 	} else {
 		listPage.classList.remove('hidden');
 	}
 }
+
+
 btnAdd.onclick = (e) => {
 	location.hash = '#/add';
 }
@@ -98,12 +108,12 @@ btnCancel.forEach((item) => {
     }
 });
 
-function checkInputField() {
-	addNewInput.onkeyup = function() {
-		if (addNewInput.value.trim()) {
-			btnAddItem.disabled = false;
+function checkInputField(inputType, saveButton) {
+	inputType.onkeyup = function() {
+		if (inputType.value.trim()) {
+			saveButton.disabled = false;
 		} else {
-			btnAddItem.disabled = true;
+			saveButton.disabled = true;
 		}
 	}
 }
@@ -195,18 +205,18 @@ function completeTask(id) {
 		return item;
 	});
 	setItemToLocalStorage(); 
-	location.reload(); //add to setItemToLocalStorage()
+	location.reload();
 }
 
 function sortTasks() {
 	let checked = getData().filter(item => item.isDone === true);
 	let unchecked = getData().filter(item => item.isDone === false);
+
 	return unchecked.concat(checked);
 }
 
 function removeTask(id) {
 	let tasks = getData();
-	console.log(tasks);
 	saveToNewData(tasks.filter((task) => task.id !== id));
 	location.reload(); 
 }
@@ -219,18 +229,27 @@ function completeTask(id) {
 		return item;
 	});
 	setItemToLocalStorage(); 
-	location.reload(); //add to setItemToLocalStorage()
+	location.reload();
 }
 
-// function updateTaskDesc(id, description) {
-// 	itemsArray = itemsArray.map((item) =>{
-// 		if(item.id === id) {
-// 			description: item.description;
-// 		}
-// 		return item;
-// 	});
-// 	setItemToLocalStorage(); 
-// 	location.reload(); //add to setItemToLocalStorage()
-// }
+function eventInUpdatePage() {
+	const id = location.hash.replace('#/modify/', '');
+	const task = getTask(id);
+	modifyInput.value = task.description;
+	btnModifyItem.onclick = (e) => {
+		updateTaskDesc(id, modifyInput.value);
+		location.hash = '';
+	}
+}
 
-// const desc = item.querySelector('#item-desctiption');
+function updateTaskDesc(id, description) {
+	let tasks = getData();
+	tasks = tasks.map((item) => {
+		if (item.id === id) {
+			item.description = description;
+		}
+		return item;
+	});
+	saveToNewData(tasks);
+	location.reload(); 
+}
